@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">WEATHER / LIVE</p>
+        <h1>Weather Dashboard</h1>
+        <p class="muted">Current conditions and a 5-day forecast</p>
+      </div>
+      <div class="status"><span class="dot"></span> Powered by Open-Meteo</div>
+    </header>
+
+    <form id="searchForm" class="search">
+      <span class="search-icon">⌕</span>
+      <input id="cityInput" type="text" value="Vijayawada" placeholder="Enter a city (e.g. Chennai)" aria-label="City name" />
+      <button type="submit">Search weather</button>
+    </form>
+
+    <p id="message" class="message" role="status">Loading weather…</p>
+
+    <section id="weatherContent" hidden>
+      <div class="hero card">
+        <div class="hero-main">
+          <p id="location" class="location">Vijayawada, India</p>
+          <p id="todayDate" class="muted"></p>
+          <div class="temperature-line">
+            <span id="weatherIcon" class="weather-icon">☀️</span>
+            <strong id="temperature">--°</strong>
+          </div>
+          <p id="description" class="description">Clear sky</p>
+          <p class="feels">Feels like <strong id="feelsLike">--°C</strong></p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        </div>
+      </div>
+
+      <div class="section-heading"><h2>Today's highlights</h2><span class="muted">Live data</span></div>
+      <div class="highlights">
+        <article class="card metric"><p>Feels like</p><strong id="metricFeels">--°C</strong><span>Perceived temperature</span></article>
+        <article class="card metric"><p>Humidity</p><strong id="humidity">--%</strong><span>Relative humidity</span></article>
+        <article class="card metric"><p>Wind speed</p><strong id="wind">-- km/h</strong><span>At your location</span></article>
+        <article class="card metric"><p>Rain chance</p><strong id="rain">--%</strong><span>Today's maximum</span></article>
+      </div>
+
+      <div class="section-heading"><h2>5-day forecast</h2><span class="muted">Daily outlook</span></div>
+      <div id="forecast" class="forecast"></div>
+      <footer>Weather data from Open-Meteo · No API key required</footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
